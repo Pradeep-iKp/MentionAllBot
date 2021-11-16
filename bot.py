@@ -23,6 +23,19 @@ async def start(event):
   await event.reply(
     "__**I'm MentionAll Bot**, I can mention almost all members in group or channel 👻\nClick **/help** for more information.",
     link_preview=False,
+    buttons=(
+
+      [
+
+        Button.url('📣 Channel', 'https://t.me/telegram'),
+
+        Button.url('📦 Source', 'https://t.me/telegram')
+
+      ]
+
+    )
+
+  ) 
 
 @client.on(events.NewMessage(pattern="^/help$"))
 async def help(event):
@@ -30,6 +43,19 @@ async def help(event):
   await event.reply(
     helptext,
     link_preview=False,
+    buttons=(
+
+      [
+
+        Button.url('📣 Channel', 'https://t.me/telegram'),
+
+        Button.url('📦 Source', 'https://t.me/telegram')
+
+      ]
+
+    )
+
+  )
   
 @client.on(events.NewMessage(pattern="^/mentionall ?(.*)"))
 async def mentionall(event):
